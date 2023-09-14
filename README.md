@@ -53,8 +53,3 @@ Dependencies
 
 -   Tkinter: Python's standard GUI library.
 -   Pandas: Data manipulation library for reading and writing CSV files.
-
-Credits
--------
-
-This Flashy Flash Card App was created by [Your Name]. You can find the source code on [GitHub](https://github.com/your-username/flashy-flash-cards).
