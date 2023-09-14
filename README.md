@@ -8,19 +8,16 @@ How to Use
 
 1.  Clone the repository to your local machine:
 
-bashCopy code
 
 `git clone https://github.com/your-username/flashy-flash-cards.git`
 
 1.  Install the required libraries if you haven't already. You can do this using pip:
 
-Copy code
 
 `pip install pandas`
 
 1.  Run the Flashy application:
 
-Copy code
 
 `python flashy_app.py`
 
