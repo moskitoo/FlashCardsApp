@@ -1,0 +1,23 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"main.CanvasConfiguration" [color="black", fontcolor="black", label=<{CanvasConfiguration|canvas : Canvas<br ALIGN="LEFT"/>canvas_image<br ALIGN="LEFT"/>title_text : NoneType<br ALIGN="LEFT"/>word_text : NoneType<br ALIGN="LEFT"/>|configure(): None<br ALIGN="LEFT"/>configure_item(tagOrId: str): None<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"main.FlashyApplication" [color="black", fontcolor="black", label=<{FlashyApplication|canvas_config<br ALIGN="LEFT"/>card_front_name : PhotoImage<br ALIGN="LEFT"/>filp_car_language_canvas<br ALIGN="LEFT"/>languages<br ALIGN="LEFT"/>new_word_language_canvas<br ALIGN="LEFT"/>right_imaged_btn<br ALIGN="LEFT"/>window_config<br ALIGN="LEFT"/>word_mngr<br ALIGN="LEFT"/>words<br ALIGN="LEFT"/>words_df : NoneType, TextFileReader<br ALIGN="LEFT"/>wrong_imaged_btn<br ALIGN="LEFT"/>|run()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"main.GridConfiguration" [color="black", fontcolor="black", label=<{GridConfiguration|column : int<br ALIGN="LEFT"/>row : int<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"main.ImagedButton" [color="black", fontcolor="black", label=<{ImagedButton|button : Button<br ALIGN="LEFT"/>image : PhotoImage<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"main.LanguageCanvas" [color="black", fontcolor="black", label=<{LanguageCanvas|canvas_config<br ALIGN="LEFT"/>card_name : PhotoImage<br ALIGN="LEFT"/>fill : str<br ALIGN="LEFT"/>language : str<br ALIGN="LEFT"/>|set_canvas(word)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"main.WindowConfiguration" [color="black", fontcolor="black", label=<{WindowConfiguration|BACKGROUND_COLOR : str<br ALIGN="LEFT"/>timer : NoneType<br ALIGN="LEFT"/>window : Tk<br ALIGN="LEFT"/>|back_to_previous_state(): None<br ALIGN="LEFT"/>reset_timer(callback: Callable[[], None]): None<br ALIGN="LEFT"/>run(): None<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"main.WordManager" [color="black", fontcolor="black", label=<{WordManager|current_word : str<br ALIGN="LEFT"/>flip_card_language_canvas<br ALIGN="LEFT"/>new_word_language_canvas<br ALIGN="LEFT"/>window_config<br ALIGN="LEFT"/>words : List[Dict[Hashable, Any]]<br ALIGN="LEFT"/>|choice_word()<br ALIGN="LEFT"/>create_csv()<br ALIGN="LEFT"/>flip_card(): None<br ALIGN="LEFT"/>is_known(): None<br ALIGN="LEFT"/>new_word(): None<br ALIGN="LEFT"/>remove_known_word()<br ALIGN="LEFT"/>reset_word_timer()<br ALIGN="LEFT"/>set_current_word_on_canvas()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"main.WordProvider" [color="black", fontcolor="black", label=<{WordProvider|<br ALIGN="LEFT"/>|get_words(path: str, default_path): Tuple[pandas.DataFrame, List[Dict[Hashable, Any]]]<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"main.CanvasConfiguration" -> "main.FlashyApplication" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="canvas_config", style="solid"];
+"main.ImagedButton" -> "main.FlashyApplication" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="right_imaged_btn", style="solid"];
+"main.ImagedButton" -> "main.FlashyApplication" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="wrong_imaged_btn", style="solid"];
+"main.LanguageCanvas" -> "main.FlashyApplication" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="new_word_language_canvas", style="solid"];
+"main.LanguageCanvas" -> "main.FlashyApplication" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="filp_car_language_canvas", style="solid"];
+"main.WindowConfiguration" -> "main.FlashyApplication" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="window_config", style="solid"];
+"main.WordManager" -> "main.FlashyApplication" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="word_mngr", style="solid"];
+"main.CanvasConfiguration" -> "main.LanguageCanvas" [arrowhead="odiamond", arrowtail="none", fontcolor="green", label="canvas_config", style="solid"];
+"main.LanguageCanvas" -> "main.WordManager" [arrowhead="odiamond", arrowtail="none", fontcolor="green", label="new_word_language_canvas", style="solid"];
+"main.LanguageCanvas" -> "main.WordManager" [arrowhead="odiamond", arrowtail="none", fontcolor="green", label="flip_card_language_canvas", style="solid"];
+"main.WindowConfiguration" -> "main.WordManager" [arrowhead="odiamond", arrowtail="none", fontcolor="green", label="window_config", style="solid"];
+}
